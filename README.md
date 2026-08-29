@@ -16,9 +16,10 @@ MOUNIR_DIGITAL/
 └── assets/          # Images et ressources
     ├── logo_Mounir_DIGITAL.png
     ├── ndiouroul.png       # Visuel du projet Ndiouroul Voyages
-    ├── samba.jpeg          # Photo équipe — Papa Samba Mboup
+    ├── papa.jpeg           # Photo équipe — Papa Samba Mboup, Fondateur
     ├── mamadou.jpeg        # Photo équipe — Mamadou THIAM
-    └── cheikh.jpeg         # Photo équipe — Cheikh Abdou Sy
+    ├── cheikh.jpeg         # Photo équipe — Cheikh Abdou Sy
+    └── dio.jpeg            # Photo équipe — Développeur Fullstack, ingénieur IA & big data
 ```
 
 ## 🎨 Design
