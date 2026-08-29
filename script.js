@@ -26,26 +26,42 @@
   /* ---------- Mobile nav toggle ---------- */
   var navToggle = document.getElementById('nav-toggle');
   var mainNav = document.getElementById('main-nav');
+  var drawer = document.getElementById('mobile-drawer');
+  var drawerBackdrop = document.getElementById('drawer-backdrop');
+  var drawerClose = document.getElementById('drawer-close');
 
-  function closeNav() {
-    if (mainNav) mainNav.classList.remove('open');
-    if (navToggle) {
-      navToggle.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
+  function setNav(open) {
+    if (mainNav) mainNav.classList.toggle('open', open);
+    if (drawer) {
+      drawer.classList.toggle('open', open);
+      drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
     }
+    if (drawerBackdrop) {
+      drawerBackdrop.classList.toggle('open', open);
+      drawerBackdrop.setAttribute('aria-hidden', open ? 'false' : 'true');
+    }
+    if (navToggle) {
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    document.body.style.overflow = open ? 'hidden' : '';
   }
+
+  function closeNav() { setNav(false); }
 
   if (navToggle) {
     navToggle.addEventListener('click', function () {
-      var open = mainNav.classList.toggle('open');
-      navToggle.classList.toggle('open', open);
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      document.body.style.overflow = open ? 'hidden' : '';
+      setNav(navToggle.getAttribute('aria-expanded') !== 'true');
     });
   }
+  if (drawerClose) drawerClose.addEventListener('click', closeNav);
+  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeNav);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
 
   /* Close nav & set active link on navigation click */
-  var navLinks = document.querySelectorAll('.nav-link');
+  var navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
   navLinks.forEach(function (link) {
     link.addEventListener('click', closeNav);
   });
