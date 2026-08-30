@@ -581,9 +581,10 @@ img, svg { display: block; }
 .contact-details { display: flex; flex-direction: column; gap: 24px; }
 .cd-item { display: flex; align-items: center; gap: 16px; }
 .cd-icon {
-  width: 50px; height: 50px; border-radius: 14px; display: grid; place-items: center; flex-shrink: 0;
+  width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; flex-shrink: 0;
   color: var(--royal); background: #fff; box-shadow: var(--shadow-sm); border: 1px solid var(--border);
 }
+.cd-icon svg { width: 20px; height: 20px; }
 .cd-item .cd-label { display: block; font-family: var(--font-head); font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 2px; }
 .cd-item p { font-weight: 600; font-size: 16px; color: var(--night); }
 
