@@ -648,7 +648,7 @@ img, svg { display: block; }
 
 /* ---------- Back to top ---------- */
 .back-top {
-  position: fixed; right: 26px; bottom: 26px; width: 50px; height: 50px; border-radius: 14px;
+  position: fixed; right: 26px; bottom: 90px; width: 50px; height: 50px; border-radius: 14px;
   background: var(--night); color: var(--gold); border: none; cursor: pointer;
   display: grid; place-items: center; box-shadow: var(--shadow-md);
   opacity: 0; visibility: hidden; transform: translateY(20px); z-index: 90;
@@ -656,6 +656,24 @@ img, svg { display: block; }
 }
 .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-top:hover { background: var(--royal); color: #fff; transform: translateY(-4px); }
+
+/* ---------- WhatsApp floating button ---------- */
+.whatsapp-btn {
+  position: fixed; right: 26px; bottom: 26px; width: 58px; height: 58px; border-radius: 50%;
+  background: #25d366; color: #fff; z-index: 90;
+  display: grid; place-items: center; box-shadow: 0 6px 24px rgba(37, 211, 102, .45);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  animation: waPulse 2.4s infinite;
+}
+.whatsapp-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, .55);
+}
+@keyframes waPulse {
+  0% { box-shadow: 0 6px 24px rgba(37, 211, 102, .45), 0 0 0 0 rgba(37, 211, 102, .5); }
+  70% { box-shadow: 0 6px 24px rgba(37, 211, 102, .45), 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 6px 24px rgba(37, 211, 102, .45), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
 
 /* ---------- Reveal on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(34px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
