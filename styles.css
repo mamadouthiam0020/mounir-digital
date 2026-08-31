@@ -646,17 +646,6 @@ img, svg { display: block; }
 .footer-legal span { cursor: pointer; transition: color .3s var(--ease); }
 .footer-legal span:hover { color: var(--gold); }
 
-/* ---------- Back to top ---------- */
-.back-top {
-  position: fixed; right: 26px; bottom: 90px; width: 50px; height: 50px; border-radius: 14px;
-  background: var(--night); color: var(--gold); border: none; cursor: pointer;
-  display: grid; place-items: center; box-shadow: var(--shadow-md);
-  opacity: 0; visibility: hidden; transform: translateY(20px); z-index: 90;
-  transition: all .4s var(--ease);
-}
-.back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-.back-top:hover { background: var(--royal); color: #fff; transform: translateY(-4px); }
-
 /* ---------- WhatsApp floating button ---------- */
 .whatsapp-btn {
   position: fixed; right: 26px; bottom: 26px; width: 58px; height: 58px; border-radius: 50%;

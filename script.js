@@ -7,21 +7,13 @@
 
   /* ---------- Header scroll state ---------- */
   var header = document.getElementById('header');
-  var backTop = document.getElementById('back-top');
 
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
     if (header) header.classList.toggle('scrolled', y > 30);
-    if (backTop) backTop.classList.toggle('show', y > 600);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  if (backTop) {
-    backTop.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
 
   /* ---------- Mobile nav toggle ---------- */
   var navToggle = document.getElementById('nav-toggle');
