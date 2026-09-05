@@ -143,15 +143,5 @@
       if (el) el.addEventListener('input', function () { resetInvalid(el); });
     });
   }
-/* ---------- Mobile bottom navigation active state ---------- */
-  var bottomNav = document.getElementById('mobile-bottom-nav');
-  if (bottomNav) {
-    var bottomLinks = bottomNav.querySelectorAll('.mbn-link');
-    bottomLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        bottomLinks.forEach(function (l) { l.classList.remove('active'); });
-        link.classList.add('active');
-      });
-    });
-  }
+
 })();
