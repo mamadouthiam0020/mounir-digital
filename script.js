@@ -15,50 +15,8 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------- Mobile nav toggle ---------- */
-  var navToggle = document.getElementById('nav-toggle');
-  var mainNav = document.getElementById('main-nav');
-  var drawer = document.getElementById('mobile-drawer');
-  var drawerBackdrop = document.getElementById('drawer-backdrop');
-  var drawerClose = document.getElementById('drawer-close');
-
-  function setNav(open) {
-    if (mainNav) mainNav.classList.toggle('open', open);
-    if (drawer) {
-      drawer.classList.toggle('open', open);
-      drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
-    }
-    if (drawerBackdrop) {
-      drawerBackdrop.classList.toggle('open', open);
-      drawerBackdrop.setAttribute('aria-hidden', open ? 'false' : 'true');
-    }
-    if (navToggle) {
-      navToggle.classList.toggle('open', open);
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    }
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
-
-  function closeNav() { setNav(false); }
-
-  if (navToggle) {
-    navToggle.addEventListener('click', function () {
-      setNav(navToggle.getAttribute('aria-expanded') !== 'true');
-    });
-  }
-  if (drawerClose) drawerClose.addEventListener('click', closeNav);
-  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeNav);
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeNav();
-  });
-
-  /* Close nav & set active link on navigation click */
-  var navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', closeNav);
-  });
-
-  /* Active link highlight on scroll */
+  /* ---------- Active link highlight on scroll ---------- */
+  var navLinks = document.querySelectorAll('.nav-link, .mbn-link');
   var sections = document.querySelectorAll('section[id]');
   function highlightNav() {
     var pos = window.scrollY + 120;
@@ -183,6 +141,17 @@
      document.getElementById('email'),
      document.getElementById('message')].forEach(function (el) {
       if (el) el.addEventListener('input', function () { resetInvalid(el); });
+    });
+  }
+/* ---------- Mobile bottom navigation active state ---------- */
+  var bottomNav = document.getElementById('mobile-bottom-nav');
+  if (bottomNav) {
+    var bottomLinks = bottomNav.querySelectorAll('.mbn-link');
+    bottomLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        bottomLinks.forEach(function (l) { l.classList.remove('active'); });
+        link.classList.add('active');
+      });
     });
   }
 })();
