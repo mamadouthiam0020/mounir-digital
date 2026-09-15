@@ -34,7 +34,7 @@
   --shadow-lg: 0 30px 70px rgba(7, 26, 53, 0.18);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --header-h: 112px;
+  --header-h: 80px;
 }
 
 /* ---------- Reset / Base ---------- */
@@ -120,7 +120,7 @@ img, svg { display: block; }
 .header-inner { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; }
 
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand-logo-img { height: 106px; width: auto; display: block; }
+.brand-logo-img { height: 60px; width: auto; display: block; object-fit: contain; }
 .footer-logo-img { height: 170px; width: auto; display: block; background: #fff; border-radius: 12px; padding: 6px; }
 .brand-mark {
   width: 44px; height: 44px; border-radius: 13px; flex-shrink: 0;
@@ -134,10 +134,10 @@ img, svg { display: block; }
 .brand-name { font-family: var(--font-head); font-weight: 800; font-size: 17px; letter-spacing: 0.5px; color: var(--night); }
 .brand-tag { font-size: 10.5px; font-weight: 600; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
 
-.main-nav { display: flex; align-items: center; gap: 30px; }
-.nav-list { display: flex; align-items: center; gap: 30px; }
+.main-nav { display: flex; align-items: center; gap: 24px; }
+.nav-list { display: flex; align-items: center; gap: 24px; }
 .nav-link {
-  font-weight: 600; font-size: 15px; color: #45506a; position: relative; padding: 4px 0;
+  font-weight: 600; font-size: 14.5px; color: #45506a; position: relative; padding: 4px 0;
   transition: color .3s var(--ease);
 }
 .nav-link::after {
@@ -147,7 +147,7 @@ img, svg { display: block; }
 .nav-link:hover, .nav-link.active { color: var(--royal); }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-.btn-cta-header { padding: 11px 22px; font-size: 14px; }
+.btn-cta-header { padding: 10px 20px; font-size: 14px; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; padding: calc(var(--header-h) + 60px) 0 80px; overflow: hidden; background: var(--white); }
@@ -697,10 +697,10 @@ img, svg { display: block; }
 }
 
 @media (max-width: 768px) {
-  :root { --header-h: 84px; }
+  :root { --header-h: 68px; }
   .section-pad { padding: 64px 0; }
 
-  .brand-logo-img { height: 74px; }
+  .brand-logo-img { height: 54px; }
   .footer-logo-img { height: 120px; }
 
   .hero { padding: calc(var(--header-h) + 40px) 0 60px; }
@@ -735,11 +735,11 @@ img, svg { display: block; }
 }
 
 @media (max-width: 480px) {
-  :root { --header-h: 76px; }
+  :root { --header-h: 60px; }
   .container { padding: 0 18px; }
   .section-pad { padding: 54px 0; }
 
-  .brand-logo-img { height: 64px; }
+  .brand-logo-img { height: 48px; }
   .section-lead { font-size: 15.5px; }
 
   .hero { padding: calc(var(--header-h) + 30px) 0 50px; }
